@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import Navbar from "./Components/Header/Navbar";
+import SimpleBarChart from "./Components/char";
+import { AddMonitor } from "./Components/addMonitor";
 
 export const metadata: Metadata = {
   title: "Admin panel",
@@ -24,7 +26,10 @@ export default function RootLayout({
           <main className="flex-1 pt-16 md:pt-0">
             {children}
           </main>
+
         </div>
+          <SimpleBarChart/>
+          <AddMonitor/>
       </body>
     </html>
   );
