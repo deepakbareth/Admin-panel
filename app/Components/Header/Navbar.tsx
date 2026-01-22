@@ -25,7 +25,7 @@ export default function Navbar() {
 
         <button
           onClick={() => setOpen(!open)}
-          className="text-white text-2xl"
+          className="text-white text-2xl cursor-pointer"
         >
           ☰
         </button>
@@ -33,18 +33,24 @@ export default function Navbar() {
 
       {/* SIDEBAR / MENU */}
 
+  <aside
+  className={`
+    bg-zinc-900
+    w-full md:w-64
 
-      <aside
-        className={`
-          ${open ? "block" : "hidden"}
-          md:flex
-          ml-8
-          flex-col
-          justify-between
-          px-6 py-5
-          md:h-full
-        `}
-      >
+    /* Mobile */
+    ${open ? "block" : "hidden"}
+    static
+
+    /* Desktop */
+    md:fixed md:top-0 md:left-0 md:h-screen
+    md:flex
+
+    flex-col justify-between
+    px-6 py-5
+  `}
+>
+
         {/* TOP SECTION */}
         <div>
           {/* Desktop Logo */}

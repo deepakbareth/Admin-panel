@@ -28,8 +28,12 @@ export default function RootLayout({
           </main>
 
         </div>
-          <SimpleBarChart/>
-          <AddMonitor/>
+
+
+          {/* <SimpleBarChart/>
+          <AddMonitor/> */}
+
+
       </body>
     </html>
   );
