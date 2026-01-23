@@ -67,7 +67,7 @@ export default function Navbar() {
         </div>
 
         {/* ADD BUTTON (Desktop ONLY) */}
-        <button className="mt-8 p-3 rounded-lg bg-blue-600 py-2 text-white cursor-pointer font-bold hover:bg-blue-400 md:block">
+        <button className="mt-8 p-3 rounded-lg bg-blue-600 py-2 text-white cursor-pointer font-bold hover:bg-blue-400   md:block  transition-all  duration-300">
           Add Monitor
         </button>
       </aside>

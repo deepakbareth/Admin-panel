@@ -7,6 +7,7 @@ export default function DashboardCard({ title, value }: StatsCardProps) {
   return (
     <div
       className="
+     
         flex items-center justify-between
         bg-zinc-800
         rounded-xl
@@ -15,6 +16,11 @@ export default function DashboardCard({ title, value }: StatsCardProps) {
         w-[45%]
         sm:w-[48%]
         lg:w-[23%]
+      
+  hover:shadow-[12px_5px_35px_-20px_rgba(0,0,0,15.8)]
+
+  transition-all
+  duration-300
       "
     >
       <div>

@@ -12,10 +12,11 @@ export default function NavLinks() {
       <li>
         <Link
           href="/"
-          className={`block px-3 py-2 rounded-lg ${
+          className={`block px-3 py-2 rounded-lg  ${
             pathname === "/dashboard"
               ? "bg-zinc-800 text-white"
-                : "hover:bg-zinc-800 hover:text-white"
+                : "hover:bg-zinc-800 hover:text-white  transition-all  duration-300" 
+                
           }`}
         >
           Dashboard
@@ -28,7 +29,7 @@ export default function NavLinks() {
           className={`block px-3 py-2 rounded-lg ${
             pathname === "/monitors"
               ? "bg-zinc-800 text-white"
-               : "hover:bg-zinc-800 hover:text-white"
+                     : "hover:bg-zinc-800 hover:text-white  transition-all  duration-300" 
           }`}
         >
           Monitors
@@ -41,7 +42,7 @@ export default function NavLinks() {
           className={`block px-3 py-2 rounded-lg ${
             pathname === "/alerts"
               ? "bg-zinc-800 text-white"
-               : "hover:bg-zinc-800 hover:text-white"
+                     : "hover:bg-zinc-800 hover:text-white  transition-all  duration-300" 
           }`}
         >
           Alerts
@@ -54,7 +55,7 @@ export default function NavLinks() {
           className={`block px-3 py-2 rounded-lg ${
             pathname === "/reports"
               ? "bg-zinc-800 text-white"
-              : "hover:bg-zinc-800 hover:text-white"
+                   : "hover:bg-zinc-800 hover:text-white  transition-all  duration-300" 
           }`}
         >
           Reports
@@ -67,7 +68,7 @@ export default function NavLinks() {
           className={`block px-3 py-2 rounded-lg ${
             pathname === "/settings"
               ? "bg-zinc-800 text-white"
-                : "hover:bg-zinc-800 hover:text-white"
+                      : "hover:bg-zinc-800 hover:text-white  transition-all  duration-300" 
           }`}
         >
           Settings

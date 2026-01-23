@@ -1,16 +1,80 @@
+"use client"
+
+import { useEffect, useState } from "react";
 import { monitorsData } from "./tableData";
+import Image from "next/image";
 
 export default function MonitorTable() {
-// let res = await fetch("hhptojjpfj")
-//let monitorsData=await res.json()
+    // let res = await fetch("hhptojjpfj")
+    //let monitorsData=await res.json()
+    const [search, setSearch] = useState("")
+    const [monitorsDatas, setmonitorDatas] = useState(monitorsData)
+    const [filteredData, setFilteredData] = useState(monitorsData);
 
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            const result = monitorsDatas.filter((item) => {
+                return (
+                    item.name.toLowerCase().includes(search.toLowerCase().trim()) ||
+                    item.url.toLowerCase().includes(search.toLowerCase().trim())
+                );
+            });
+            setFilteredData(result);
+        }, 500); // 500ms delay
 
-    console.log(monitorsData)
+        return () => clearTimeout(timer);
+    }, [search, monitorsDatas]);
+
     return (
         <div className="p-4 md:p-6">
-            <h2 className="text-xl sm:text-2xl font-bold text-white mb-4">
-                Monitors
-            </h2>
+
+            <div className="flex flex-col gap-3 mb-3 md:flex-row md:items-center md:justify-between">
+
+                <h2 className="text-xl sm:text-2xl font-bold text-white">
+                    Monitors
+                </h2>
+
+                <div
+                    id="searchMonitor"
+                    className="
+      flex items-center
+      w-full md:w-72
+      bg-zinc-100
+      border border-zinc-700
+      rounded-3xl
+      px-4 py-2
+      focus-within:ring-1 focus-within:ring-blue-500
+      focus-within:border-blue-300
+    "
+                >
+                    <input
+                     value={search}
+                        type="text"
+                        placeholder="Search name or url"
+                        onChange={(e) => { setSearch(e.target.value) }}
+                        className="
+        w-full
+        bg-transparent
+        text-sm md:text-base
+        text-black
+        placeholder-zinc-400
+        outline-none
+      "
+                    />
+
+                    <Image
+                        src="/search.png"
+                        alt="Search"
+                        width={18}
+                        height={18}
+                        className="ml-2 opacity-70"
+                    />
+                </div>
+
+            </div>
+
+
+
 
             {/* ================= MOBILE VIEW ================= */}
 
@@ -18,7 +82,7 @@ export default function MonitorTable() {
             <div className="space-y-4 md:hidden">
 
                 {
-                    monitorsData.map((itm) => (
+                    filteredData.map((itm) => (
                         <div key={itm.id} className="bg-zinc-800 rounded-lg p-4 text-white">
                             <p className="text-sm text-gray-400">Friendly Name</p>
                             <p className="font-medium">{itm.name}</p>
@@ -60,7 +124,7 @@ export default function MonitorTable() {
 
                     <tbody className="bg-zinc-800 text-gray-300">
                         {
-                            monitorsData.map((itm) => (
+                            filteredData.map((itm) => (
                                 <tr key={itm.id} className="border-t border-zinc-700 hover:bg-zinc-700 transition">
                                     <td className="p-3">{itm.name}</td>
                                     <td className="p-3 text-blue-400 hover:text-blue-300  cursor-not-allowed">
