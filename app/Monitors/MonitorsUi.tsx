@@ -1,6 +1,6 @@
 import MonitorTable from "./MonitorTable";
 
-export default function Monitors() {
+export default function MonitorsUi() {
 
   return (
     <>

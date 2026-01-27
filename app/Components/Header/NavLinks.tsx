@@ -12,68 +12,67 @@ export default function NavLinks() {
       <li>
         <Link
           href="/"
-          className={`block px-3 py-2 rounded-lg  ${
-            pathname === "/dashboard"
-              ? "bg-zinc-800 text-white"
-                : "hover:bg-zinc-800 hover:text-white  transition-all  duration-300" 
-                
-          }`}
+          className={`block px-3 py-2 rounded-lg ${pathname === "/"
+            ? "bg-zinc-800 text-blue-500"
+            : "hover:bg-zinc-800 hover:text-white transition-all duration-300"
+            }`}
         >
           Dashboard
         </Link>
       </li>
 
+
       <li>
         <Link
-          href="/"
-          className={`block px-3 py-2 rounded-lg ${
-            pathname === "/monitors"
-              ? "bg-zinc-800 text-white"
-                     : "hover:bg-zinc-800 hover:text-white  transition-all  duration-300" 
-          }`}
+          href="/Monitors"
+          className={`block px-3 py-2 rounded-lg ${pathname === "/Monitors"
+            ? "bg-zinc-800 text-blue-500"
+            : "hover:bg-zinc-800 hover:text-white transition-all duration-300"
+            }`}
         >
           Monitors
         </Link>
       </li>
 
+
       <li>
         <Link
-          href="/"
-          className={`block px-3 py-2 rounded-lg ${
-            pathname === "/alerts"
-              ? "bg-zinc-800 text-white"
-                     : "hover:bg-zinc-800 hover:text-white  transition-all  duration-300" 
-          }`}
+          href="/alerts"
+          className={`block px-3 py-2 rounded-lg ${pathname === "/alerts"
+            ? "bg-zinc-800 text-blue-500"
+            : "hover:bg-zinc-800 hover:text-white transition-all duration-300"
+            }`}
         >
           Alerts
         </Link>
       </li>
 
+
       <li>
         <Link
-          href="/"
-          className={`block px-3 py-2 rounded-lg ${
-            pathname === "/reports"
-              ? "bg-zinc-800 text-white"
-                   : "hover:bg-zinc-800 hover:text-white  transition-all  duration-300" 
-          }`}
+          href="/reports"
+          className={`block px-3 py-2 rounded-lg ${pathname === "/reports"
+            ? "bg-zinc-800 text-blue-500"
+            : "hover:bg-zinc-800 hover:text-white transition-all duration-300"
+            }`}
         >
           Reports
         </Link>
       </li>
 
+
       <li>
         <Link
-          href="/"
-          className={`block px-3 py-2 rounded-lg ${
-            pathname === "/settings"
-              ? "bg-zinc-800 text-white"
-                      : "hover:bg-zinc-800 hover:text-white  transition-all  duration-300" 
-          }`}
+          href="/settings"
+          className={`block px-3 py-2 rounded-lg ${pathname === "/settings"
+              ? "bg-zinc-800 text-blue-500"
+              : "hover:bg-zinc-800 hover:text-white transition-all duration-300"
+            }`}
         >
           Settings
         </Link>
       </li>
+
 
     </ul>
   );

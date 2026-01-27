@@ -2,9 +2,12 @@
 
 import React, { useState } from "react";
 import NavLinks from "./NavLinks";
-
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 export default function Navbar() {
+   const pathname = usePathname();
   const [open, setOpen] = useState(false);
+
 
   return (
     <header
@@ -67,9 +70,22 @@ export default function Navbar() {
         </div>
 
         {/* ADD BUTTON (Desktop ONLY) */}
-        <button className="mt-8 p-3 rounded-lg bg-blue-600 py-2 text-white cursor-pointer font-bold hover:bg-blue-400   md:block  transition-all  duration-300">
-          Add Monitor
-        </button>
+        
+       <li>
+  <Link
+    href="/addMonitors"
+    className={`mt-8 inline-block w-full text-center rounded-lg px-3 py-2 font-bold transition-all duration-300
+      ${
+        pathname === "/addMonitors"
+          ? "bg-zinc-800 text-blue-500"
+          : "bg-blue-600 text-white hover:bg-blue-400"
+      }
+    `}
+  >
+    Add Monitor
+  </Link>
+</li>
+
       </aside>
     </header>
   );

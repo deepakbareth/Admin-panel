@@ -7,6 +7,7 @@ import Image from "next/image";
 export default function MonitorTable() {
     // let res = await fetch("hhptojjpfj")
     //let monitorsData=await res.json()
+    let name="deepak"
     const [search, setSearch] = useState("")
     const [monitorsDatas, setmonitorDatas] = useState(monitorsData)
     const [filteredData, setFilteredData] = useState(monitorsData);

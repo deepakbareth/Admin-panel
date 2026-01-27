@@ -1,5 +1,5 @@
 import DashboardCard from "./DashboardCard";
-import { monitorsData } from '../Monitors/tableData'
+import { monitorsData } from '../../Monitors/tableData'
 
 export default function DashboardUi() {
 const total = monitorsData.length;
